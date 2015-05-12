@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', ['use' => 'LabController@index', 'as' => 'Index']);
+Route::get('/', ['use' => 'LabController@redirect']);
+Route::get('/lab', ['use' => 'LabController@index', 'as' => 'Index']);
 Route::get('admin', ['use' => 'LabController@index', 'as' => 'Admin']);
 Route::get('lab/{id}', ['use' => 'LabController@show', 'as' => 'Show']);
 Route::get('lab/{id}', ['use' => 'LabController@create', 'as' => 'Create']);

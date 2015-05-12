@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class LabController extends Controller {
 
+    public function redirect() {
+        return redirect()->route('Index');
+    }
+
 	public function index(){
         $labs = Lab::all()->orderBy('number', 'ASC')->get();
 
