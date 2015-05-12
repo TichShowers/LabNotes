@@ -11,5 +11,11 @@
 |
 */
 
-Route::get('/', 'LabController@index');
-Route::get('/lab/{id}', 'LabController@show');
+Route::get('/', ['use' => 'LabController@index', 'as' => 'Index']);
+Route::get('admin', ['use' => 'LabController@index', 'as' => 'Admin']);
+Route::get('lab/{id}', ['use' => 'LabController@show', 'as' => 'Show']);
+Route::get('lab/{id}', ['use' => 'LabController@create', 'as' => 'Create']);
+Route::post('lab/{id}', ['use' => 'LabController@store']);
+Route::get('lab/{id}/edit', ['use' => 'LabController@edit', 'as' => 'Edit']);
+Route::post('lab/{id}/edit', ['use' => 'LabController@update']);
+Route::post('lab/{id}/delete', ['use' => 'LabController@delete', 'as' => 'Delete']);
